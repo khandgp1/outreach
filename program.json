@@ -1,34 +1,246 @@
 {
   "days": [
     {
-      "title": "Intro",
-      "focus": "Vibe Coding Workflow",
-      "description": "Mastering the loop between human intent and AI execution.",
-      "mindset": "You are the Architect. The LLM is your Project Manager. Project IDX is your Lead Developer. You don't need to speak the machine's language fluently; you just need to guide the conversation.",
-      "exercises": [
+      "title": "WRITTEN OUTREACH",
+      "focus": "Email Checklist",
+      "superGroups": [
         {
-          "name": "1. The Kickstart: AI Blueprinting",
-          "sets": "Idea",
-          "reps": "Blueprint",
-          "note": "Describe your vision in plain English to generate a No-Code Implementation Plan."
+          "name": "Outreach 1",
+          "groups": [
+            {
+              "name": "Review 1",
+              "exercises": [
+                {
+                  "name": "Feeling",
+                  "note": "1) About me 2) Reduce Risk 3) Move towards a clear next step without pressure"
+                },
+                {
+                  "name": "Next Step",
+                  "note": ""
+                },
+                {
+                  "name": "Lane",
+                  "note": ""
+                },
+                {
+                  "name": "Solution",
+                  "note": ""
+                },
+                {
+                  "name": "Friction",
+                  "note": "1) Visible/Fast 2) Logical 3) Decision Tied"
+                },
+                {
+                  "name": "Reason",
+                  "note": ""
+                },
+                {
+                  "name": "Consequence Mechanics",
+                  "note": ""
+                },
+                {
+                  "name": "Website, Name, and Branding Name",
+                  "note": ""
+                },
+                {
+                  "name": "First Name",
+                  "note": ""
+                },
+                {
+                  "name": "Subject Line has the same micro yes",
+                  "note": ""
+                }
+              ]
+            },
+            {
+              "name": "Review 2",
+              "exercises": [
+                {
+                  "name": "Short and Readable Fast",
+                  "note": ""
+                },
+                {
+                  "name": "Calm and Factual",
+                  "note": ""
+                },
+                {
+                  "name": "Observation One Issue",
+                  "note": ""
+                },
+                {
+                  "name": "Mechanics described as patterns not metric claims",
+                  "note": ""
+                },
+                {
+                  "name": "Free value framed as something you’ll create after they say yes",
+                  "note": ""
+                },
+                {
+                  "name": "Clean exit and the CTA a single permission question",
+                  "note": ""
+                }
+              ]
+            },
+            {
+              "name": "10 Sec Test",
+              "exercises": [
+                {
+                  "name": "Verify the issue in 10 sec",
+                  "note": ""
+                },
+                {
+                  "name": "One friction",
+                  "note": ""
+                },
+                {
+                  "name": "Recognizable Behavior not theory",
+                  "note": ""
+                },
+                {
+                  "name": "Consequence mechanics a chain not a claim",
+                  "note": ""
+                },
+                {
+                  "name": "Sound like a pitch",
+                  "note": ""
+                },
+                {
+                  "name": "Subject match micro yes",
+                  "note": ""
+                }
+              ]
+            }
+          ]
         },
         {
-          "name": "2. The Implementation: Anti-Gravity (IDX)",
-          "sets": "Blueprint",
-          "reps": "Codebase",
-          "note": "Feed your plan into Project IDX to generate the initial codebase and see a tangible preview instantly."
+          "name": "FOLLOW-UP 2",
+          "groups": [
+            {
+              "name": "CHECKLIST",
+              "exercises": [
+                {
+                  "name": "Shorter",
+                  "note": ""
+                },
+                {
+                  "name": "Same Issue",
+                  "note": ""
+                },
+                {
+                  "name": "No Call",
+                  "note": ""
+                },
+                {
+                  "name": "No Internal Data",
+                  "note": ""
+                },
+                {
+                  "name": "Not Annoyed Tone",
+                  "note": ""
+                },
+                {
+                  "name": "Same Micro Yes",
+                  "note": ""
+                },
+                {
+                  "name": "Forward Internally",
+                  "note": ""
+                }
+              ]
+            }
+          ]
         },
         {
-          "name": "3. The Review: Strategic Feedback",
-          "sets": "Iterative",
-          "reps": "Update Plan",
-          "note": "Identify changes and describe adjustments back to an LLM to generate a Focused Update Plan."
+          "name": "FOLLOW-UP 3",
+          "groups": [
+            {
+              "name": "CHECKLIST",
+              "exercises": [
+                {
+                  "name": "Short",
+                  "note": ""
+                },
+                {
+                  "name": "One Lane",
+                  "note": ""
+                },
+                {
+                  "name": "Clear Boundary",
+                  "note": ""
+                },
+                {
+                  "name": "Minutes",
+                  "note": ""
+                },
+                {
+                  "name": "Micro Yes",
+                  "note": ""
+                }
+              ]
+            }
+          ]
         },
         {
-          "name": "4. The Iteration: Refine and Repeat",
-          "sets": "Continuous",
-          "reps": "Vision",
-          "note": "Move back and forth between the plan and implementation until the project perfectly matches your vision."
+          "name": "Subject Line",
+          "groups": [
+            {
+              "name": "CHECKLIST",
+              "exercises": [
+                {
+                  "name": "3-4 words",
+                  "note": ""
+                },
+                {
+                  "name": "Plain business voice",
+                  "note": ""
+                },
+                {
+                  "name": "CTA Mirror",
+                  "note": ""
+                },
+                {
+                  "name": "Names only when natural",
+                  "note": ""
+                },
+                {
+                  "name": "Number only when it increases clarity",
+                  "note": ""
+                },
+                {
+                  "name": "No trend words",
+                  "note": ""
+                },
+                {
+                  "name": "Avoid Campaign Signals",
+                  "note": ""
+                },
+                {
+                  "name": "Promise",
+                  "note": ""
+                },
+                {
+                  "name": "Would this normal if it came from a vender you work with?",
+                  "note": ""
+                },
+                {
+                  "name": "Came from someone inside the company?",
+                  "note": ""
+                },
+                {
+                  "name": "Business email or marketing?",
+                  "note": ""
+                },
+                {
+                  "name": "Preview the CTA inside the email",
+                  "note": ""
+                },
+                {
+                  "name": "If you remove the name, is it still one-to-one?",
+                  "note": ""
+                }
+              ]
+            }
+          ]
         }
       ]
     },

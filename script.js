@@ -39,14 +39,17 @@ function renderContent() {
     const content = document.getElementById('workout-content');
     const day = appData.days[currentTab];
     
-    // Scope the wider max-width to the Snippets tab only
-    content.classList.remove('snippets-wide');
+    // Scope the wider max-width to the Snippets and Checklist tabs
+    content.classList.remove('snippets-wide', 'checklists-wide');
 
-    if (day.title.toLowerCase() === 'intro') {
-        renderIntro(day);
+    if (day.title.toLowerCase() === 'written outreach') {
+        content.classList.add('checklists-wide');
+        renderChecklist(day);
     } else if (day.title.toLowerCase() === 'snippets') {
         content.classList.add('snippets-wide');
         renderSnippets(day);
+    } else if (day.title.toLowerCase() === 'intro') {
+        renderIntro(day);
     } else {
         renderWorkout(day);
     }
@@ -78,6 +81,87 @@ function renderSnippets(day) {
 
     // Re-bind copy buttons for the new content
     bindCopyButtons();
+}
+
+function renderChecklist(day) {
+    const content = document.getElementById('workout-content');
+    let headerHtml = `
+        <div style="text-align:center; margin-bottom: 30px;">
+            <h2 style="font-weight:300;">${day.focus}</h2>
+            ${day.description ? `<p class="section-description">${day.description}</p>` : ''}
+        </div>
+    `;
+
+    if (day.superGroups) {
+        const superGroupsHtml = day.superGroups.map((sg, sgIdx) => {
+            const groupsHtml = sg.groups.map((group, gIdx) => `
+                <div class="checklist-group">
+                    <h3 class="checklist-group-title">${group.name}</h3>
+                    <div class="checklist-container">
+                        ${group.exercises.map((item, idx) => `
+                            <div class="checklist-item">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="check-${sgIdx}-${gIdx}-${idx}">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="checklist-text">
+                                    <h4>${item.name}</h4>
+                                    <p>${item.note}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            const fullWidthClass = sg.name === "Subject Line" ? " full-width-card" : "";
+            return `
+                <div class="checklist-super-group${fullWidthClass}">
+                    <h3 class="checklist-super-group-title">${sg.name}</h3>
+                    <div class="checklist-groups-wrapper">${groupsHtml}</div>
+                </div>
+            `;
+        }).join('');
+        content.innerHTML = headerHtml + `<div class="supergroups-container">${superGroupsHtml}</div>`;
+    } else if (day.groups) {
+        const groupsHtml = day.groups.map((group, gIdx) => `
+            <div class="checklist-group">
+                <h3 class="checklist-group-title">${group.name}</h3>
+                <div class="checklist-container">
+                    ${group.exercises.map((item, idx) => `
+                        <div class="checklist-item">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="check-${gIdx}-${idx}">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="checklist-text">
+                                <h4>${item.name}</h4>
+                                <p>${item.note}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+        content.innerHTML = headerHtml + groupsHtml;
+    } else {
+        const containerHtml = `
+            <div class="checklist-container">
+                ${day.exercises.map((item, idx) => `
+                    <div class="checklist-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="check-${idx}">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="checklist-text">
+                            <h4>${item.name}</h4>
+                            <p>${item.note}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        content.innerHTML = headerHtml + containerHtml;
+    }
 }
 
 function renderWorkout(day) {
@@ -276,10 +360,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Password Protection Logic
+    const passwordOverlay = document.getElementById('password-overlay');
+    
+    if (window.APP_CONFIG && !window.APP_CONFIG.features.passwordProtection) {
+        if (passwordOverlay) passwordOverlay.classList.add('hidden');
+        return;
+    }
+
     const passwordInput = document.getElementById('site-password-input');
     const passwordSubmit = document.getElementById('submit-password');
     const passwordError = document.getElementById('password-error');
-    const passwordOverlay = document.getElementById('password-overlay');
 
     if (passwordSubmit && passwordInput) {
         const handlePasswordSubmit = () => {
